@@ -1,0 +1,186 @@
+:root {
+  --bg: #f8f8f8;
+  --surface: #ffffff;
+  --ink: #111111;
+  --muted: #5a5a5a;
+  --line: #dedede;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #fcfcfc, var(--bg) 45%);
+  color: var(--ink);
+  font-family: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+}
+
+.shell {
+  width: min(1080px, 100% - 3rem);
+  margin: 0 auto;
+  padding: 5rem 0 7rem;
+}
+
+.block {
+  margin-top: 8.5rem;
+}
+
+.block:first-child {
+  margin-top: 0;
+}
+
+.meta {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: 'Neue Haas Grotesk Display Pro', 'Avenir Next Condensed', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  margin-top: 1.4rem;
+  font-size: clamp(2.4rem, 10vw, 7.2rem);
+  line-height: 0.95;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+h3 {
+  margin-top: 0.8rem;
+  font-size: clamp(1.25rem, 3vw, 1.9rem);
+}
+
+.intro,
+.caption,
+.statement p,
+.pillar p,
+.contact a {
+  font-size: 1.04rem;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.hero .intro {
+  margin-top: 2.4rem;
+  max-width: 62ch;
+}
+
+.statement {
+  border-left: 1px solid var(--line);
+  padding-left: 1.5rem;
+}
+
+.statement p {
+  margin: 0;
+  max-width: 68ch;
+}
+
+.statement span {
+  color: var(--ink);
+}
+
+.section-top.spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+}
+
+.caption {
+  margin: 0;
+}
+
+.pillars {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.pillar {
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+  padding: 2rem 1.4rem;
+  min-height: 220px;
+}
+
+.pillar p {
+  margin: 1rem 0 0;
+}
+
+.work-list {
+  margin-top: 2.1rem;
+  border-top: 1px solid var(--line);
+}
+
+.work-item {
+  border-bottom: 1px solid var(--line);
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.year {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact {
+  border-top: 1px solid var(--line);
+  padding-top: 2.8rem;
+}
+
+.contact .intro {
+  margin: 1rem 0 0;
+}
+
+.contact a {
+  display: inline-block;
+  margin-top: 1.3rem;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.2rem;
+}
+
+@media (max-width: 900px) {
+  .pillars {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: min(1080px, 100% - 2rem);
+    padding-top: 3.2rem;
+  }
+
+  .block {
+    margin-top: 5.5rem;
+  }
+
+  .section-top.spaced,
+  .work-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
